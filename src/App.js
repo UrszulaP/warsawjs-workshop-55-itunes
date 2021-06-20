@@ -67,8 +67,8 @@ function Itunes() {
         ))}
       </UnorderedList> */}
       
-      <Box maxW="lg" borderWidth="1px" borderRadius="lg" fontSize="sm">
-        <Table variant="simple">
+      <Box maxW="lg" borderWidth="1px" borderRadius="lg">
+        <Table variant="simple" size="sm">
           <Thead>
             <Tr>
               <Th>Track name</Th>
