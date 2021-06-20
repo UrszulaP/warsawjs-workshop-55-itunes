@@ -6,6 +6,17 @@ import {
   UnorderedList,
   ListItem,
   Input,
+  
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  
+  Box,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -47,13 +58,33 @@ function Itunes() {
           Search
         </Button>
       </Stack>
-      <UnorderedList>
+      
+      {/* <UnorderedList>
         {results.map((result) => (
           <ListItem>
             {result.trackName} ({result.artistName})
           </ListItem>
         ))}
-      </UnorderedList>
+      </UnorderedList> */}
+      
+      <Box maxW="lg" borderWidth="1px" borderRadius="lg" fontSize="sm">
+        <Table variant="simple">
+          <Thead>
+            <Tr>
+              <Th>Track name</Th>
+              <Th>Artist Name</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+          {results.map((result) => (
+            <Tr>
+              <Td>{result.trackName}</Td>
+              <Td>{result.artistName}</Td>
+            </Tr>
+          ))}
+          </Tbody>
+        </Table>
+      </Box>
     </Stack>
   );
 }
@@ -69,7 +100,7 @@ function App(props) {
       <header className="App-header">
         <Stack direction="column">
           <Itunes />
-          <Stack direction="row">
+          {/* <Stack direction="row">
             <Badge>{count}</Badge>
             <Button
               colorScheme="green"
@@ -87,7 +118,7 @@ function App(props) {
             >
               -
             </Button>
-          </Stack>
+          </Stack> */}
         </Stack>
       </header>
     </div>
