@@ -17,8 +17,20 @@ import {
   TableCaption,
   
   Box,
+  Spinner,
 } from "@chakra-ui/react";
 import { useState } from "react";
+// import { Link } from 'react-router-dom';
+
+
+function LoadingSpinner(props) {
+  const isLoadingg = props.isLoadingg;
+  if (isLoadingg) {
+    return <Spinner size="sm" />;
+  }
+  return null;
+}
+
 
 function Itunes() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,6 +45,7 @@ function Itunes() {
       trackName: "Itunes",
     },
   ]);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Stack direction="column">
@@ -46,26 +59,21 @@ function Itunes() {
         <Button
           colorScheme="blue" colorScheme="teal"
           onClick={async () => {
+            setIsLoading(true);
             const result = await fetch(
               `https://itunes.apple.com/search?term=${encodeURIComponent(
                 searchTerm
               )}&entity=musicVideo`
             );
             const data = await result.json();
+            setIsLoading(false);
             setResults(data.results);
+            console.log(data);
           }}
         >
-          Search
-        </Button>
+          Search <LoadingSpinner isLoadingg={isLoading} />
+        </Button>    
       </Stack>
-      
-      {/* <UnorderedList>
-        {results.map((result) => (
-          <ListItem>
-            {result.trackName} ({result.artistName})
-          </ListItem>
-        ))}
-      </UnorderedList> */}
       
       <Box maxW="lg" borderWidth="1px" borderRadius="lg" pt="3">
         <Table variant="simple" size="sm">
@@ -73,6 +81,7 @@ function Itunes() {
             <Tr>
               <Th>Track name</Th>
               <Th>Artist Name</Th>
+              {/* <Th>Video link</Th> */}
             </Tr>
           </Thead>
           <Tbody>
@@ -80,6 +89,7 @@ function Itunes() {
               <Tr>
                 <Td>{result.trackName}</Td>
                 <Td>{result.artistName}</Td>
+                {/* <Td><Link to="result.previewUrl">{result.previewUrl}</Link></Td> */}
               </Tr>
             ))}
           </Tbody>
