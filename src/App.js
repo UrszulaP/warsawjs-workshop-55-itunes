@@ -20,7 +20,6 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { useState } from "react";
-// import { Link } from 'react-router-dom';
 
 
 function LoadingSpinner(props) {
@@ -81,7 +80,6 @@ function Itunes() {
             <Tr>
               <Th>Track name</Th>
               <Th>Artist Name</Th>
-              {/* <Th>Video link</Th> */}
             </Tr>
           </Thead>
           <Tbody>
@@ -89,7 +87,6 @@ function Itunes() {
               <Tr>
                 <Td>{result.trackName}</Td>
                 <Td>{result.artistName}</Td>
-                {/* <Td><Link to="result.previewUrl">{result.previewUrl}</Link></Td> */}
               </Tr>
             ))}
           </Tbody>
