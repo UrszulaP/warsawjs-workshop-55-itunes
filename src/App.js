@@ -144,28 +144,6 @@ function Itunes() {
         </Box>
       ))}
       </SimpleGrid>
-
-
-      {/* <Box maxW="lg" borderWidth="1px" borderRadius="lg" pt="3">
-        <Table variant="simple" size="sm">
-          <Thead>
-            <Tr>
-              <Th>Track name</Th>
-              <Th>Artist Name</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {results.map((result) => (
-              <Tr>
-                <Td>{result.trackName}</Td>
-                <Td>{result.artistName}</Td>
-                <Td><DetailsModal result={result} /></Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </Box> */}
-
     </Stack>
   );
 }
