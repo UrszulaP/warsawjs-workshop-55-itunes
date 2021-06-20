@@ -67,7 +67,7 @@ function Itunes() {
         ))}
       </UnorderedList> */}
       
-      <Box maxW="lg" borderWidth="1px" borderRadius="lg">
+      <Box maxW="lg" borderWidth="1px" borderRadius="lg" pt="3">
         <Table variant="simple" size="sm">
           <Thead>
             <Tr>
@@ -76,12 +76,12 @@ function Itunes() {
             </Tr>
           </Thead>
           <Tbody>
-          {results.map((result) => (
-            <Tr>
-              <Td>{result.trackName}</Td>
-              <Td>{result.artistName}</Td>
-            </Tr>
-          ))}
+            {results.map((result) => (
+              <Tr>
+                <Td>{result.trackName}</Td>
+                <Td>{result.artistName}</Td>
+              </Tr>
+            ))}
           </Tbody>
         </Table>
       </Box>
@@ -93,7 +93,7 @@ function App(props) {
   // const result = useState(0);
   // const count = result[0];
   // const setCount = result[1];
-  const [count, setCount] = useState(5);
+  // const [count, setCount] = useState(5);
 
   return (
     <div className="App">
