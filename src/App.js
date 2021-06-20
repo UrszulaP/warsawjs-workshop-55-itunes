@@ -44,7 +44,7 @@ function Itunes() {
           }}
         />
         <Button
-          colorScheme="blue"
+          colorScheme="blue" colorScheme="teal"
           onClick={async () => {
             const result = await fetch(
               `https://itunes.apple.com/search?term=${encodeURIComponent(
