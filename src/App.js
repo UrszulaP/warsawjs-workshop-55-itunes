@@ -5,13 +5,6 @@ import {
   Button,
   Input,
 
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-
   Box,
   Spinner,
   Center,
@@ -21,7 +14,6 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   AspectRatio,
@@ -111,6 +103,7 @@ function Itunes() {
               setSearchTerm(event.target.value);
             }}
           />
+          <LoadingSpinner isLoadingg={isLoading} />
           <Button
             colorScheme="teal"
             onClick={async () => {
@@ -126,7 +119,7 @@ function Itunes() {
               console.log(data);
             }}
           >
-            Search <LoadingSpinner isLoadingg={isLoading} />
+            Search
           </Button>
         </Stack>
       </Center>
